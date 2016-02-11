@@ -1,11 +1,9 @@
 package com.google.randomTurtles;
 
+import java.awt.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
-/**
- * Created by Alexandre on 11.02.16.
- */
+
 public class World {
 
     private final int rows;
@@ -14,10 +12,10 @@ public class World {
     private final long deadline;
     private final int droneMaxLoad;
 
+    private final
+
     private final ArrayList<Integer> products;
 
+    private final ArrayList<Point>
 
-    public World() {
-
-    }
 }
