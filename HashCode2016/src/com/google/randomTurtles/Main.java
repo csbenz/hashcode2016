@@ -11,6 +11,7 @@ public class Main {
 
         Parser.parse("mother_of_all_warehouses.in");
 
+        World.printWorldParameters();
 
     }
 }
