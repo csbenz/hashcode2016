@@ -6,18 +6,19 @@ import java.util.ArrayList;
 
 public class World {
 
-    final int rows; // of the World
-    final int columns; // of the World
-    final int D; // Drone Number
-    final long deadline; // Maximum number of Turns of the simulation
-    final int droneMaxLoad; //
+    public int rows; // of the World
+    public int columns; // of the World
+    public int D; // Drone Number
+    public long deadline; // Maximum number of Turns of the simulation
+    public int droneMaxLoad; //
 
-    final static int P; // Number of different Products
-    private final ArrayList<Integer> productWeights;
+    public static int P; // Number of different Products
+    public ArrayList<Integer> productWeights;
 
-    final static int W; // Number of Warehouses
-    private final ArrayList<Warehouse> warehouses; // locations
+    public static int W; // Number of Warehouses
+    public ArrayList<Warehouse> warehouses; // --> Contains location, and product availibilities...
 
-
+    public static int C; // Number of Orders
+    public ArrayList<Order> orders;
 
 }

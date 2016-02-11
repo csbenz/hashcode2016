@@ -45,19 +45,6 @@ public class Parser {
                 // TODO loop and set
             }
 
-
-//            String line;
-//
-//            if ((line = br.readLine()) != null) {
-//                String pattern = "() ()";
-//                Pattern p = Pattern.compile(pattern);
-//                String[] linCol = p.split(line);
-//                System.out.println(linCol[1]);
-//            }
-//            while ((line = br.readLine()) != null) {
-//                // process the line.
-////                count = line.;
-//            }
         } catch (IOException e) {
             System.out.println(e.toString());
         }
