@@ -1,5 +1,6 @@
 package com.google.randomTurtles;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -17,7 +18,7 @@ public class Parser {
             World.rows = Integer.parseInt(worldVariables[0]);
             World.columns = Integer.parseInt(worldVariables[1]);
             World.D = Integer.parseInt(worldVariables[2]);
-            World.deadline = Integer.parseInt(worldVariables[3]);
+            Main.deadline = Integer.parseInt(worldVariables[3]);
             World.droneMaxLoad = Integer.parseInt(worldVariables[4]);
 
 
@@ -41,6 +42,8 @@ public class Parser {
                 // TODO set r c
                 String[] availableItemsArray = br.readLine().split(" ");
                 // TODO loop and set
+
+//                Warehouse warehouse = new Warehouse(new Point(row, column),)
             }
 
             int C = Integer.parseInt(br.readLine());
