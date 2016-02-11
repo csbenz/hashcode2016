@@ -42,7 +42,7 @@ public class Parser {
                 int column = Integer.parseInt(location[1]);
 
                 String[] availableItemsArray = br.readLine().split(" ");
-                int[] availableItemsArrayInt = stringArrayToInt(availableItemsArray);
+                ArrayList<Integer> availableItemsArrayInt = stringArrayToIntList(availableItemsArray);
 
                 Warehouse warehouse = new Warehouse(new Point(row, column), availableItemsArrayInt);
                 warehouses.add(warehouse);
