@@ -60,4 +60,10 @@ public class World {
      */
     public static ArrayList<Order> orders;
 
+
+    public static void printWorldParameters() {
+        System.out.println(rows + "\n" + columns + "\n" + D + "\n" + deadline + "\n" + droneMaxLoad
+                        + "\n\n" + P + "\n" + productWeights + "\n\n" + W + "\n" + warehouses + "\n\n" + C + "\n" + orders);
+    }
+
 }

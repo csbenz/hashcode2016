@@ -6,6 +6,7 @@ package com.google.randomTurtles;
  */
 public class Main {
     public static void main(String[] args) {
+
         System.out.print("Hello RandomTurtles");
 
         Parser.parse("mother_of_all_warehouses.in");
