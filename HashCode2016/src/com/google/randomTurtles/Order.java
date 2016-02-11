@@ -14,7 +14,8 @@ public class Order {
     public Order(Point position, int size, ArrayList<Integer> itemTypeList){
         this.position = position;
         this.size = size;
-        for(int i = 0; i<itemTypeList.size();i++){
+        items = new int[World.P];
+        for(int i = 0; i<itemTypeList.size(); i++){
 
         }
     }
