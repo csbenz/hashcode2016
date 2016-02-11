@@ -35,32 +35,56 @@ public class Parser {
             int W = Integer.parseInt(br.readLine());
             World.W = W;
 
+            ArrayList<Warehouse> warehouses = new ArrayList<>();
             for (int i = 0; i < W; i++) {
                 String[] location = br.readLine().split(" ");
                 int row = Integer.parseInt(location[0]);
                 int column = Integer.parseInt(location[1]);
-                // TODO set r c
-                String[] availableItemsArray = br.readLine().split(" ");
-                // TODO loop and set
 
-//                Warehouse warehouse = new Warehouse(new Point(row, column),)
+                String[] availableItemsArray = br.readLine().split(" ");
+                int[] availableItemsArrayInt = stringArrayToInt(availableItemsArray);
+
+                Warehouse warehouse = new Warehouse(new Point(row, column), availableItemsArrayInt);
+                warehouses.add(warehouse);
             }
+            World.warehouses = warehouses;
 
             int C = Integer.parseInt(br.readLine());
+            ArrayList<Order> orders = new ArrayList<>();
             for (int i = 0; i < C; i++) {
                 String[] location = br.readLine().split(" ");
                 int row = Integer.parseInt(location[0]);
                 int column = Integer.parseInt(location[1]);
 
                 int Li = Integer.parseInt(br.readLine());
-                // TODO set ordered numbers for order i: Li
+
                 String[] productTypes = br.readLine().split(" ");
-                // TODO loop and set
+                ArrayList<Integer> productTypesInt = stringArrayToIntList(productTypes);
+
+                Order order = new Order(new Point(row, column), Li, productTypesInt);
+                orders.add(order);
             }
+            World.orders = orders;
 
         } catch (IOException e) {
             System.out.println(e.toString());
         }
+    }
+
+    private static int[] stringArrayToInt(String[] strings) {
+        final int[] ints = new int[strings.length];
+        for (int i = 0; i < strings.length; i++) {
+            ints[i] = Integer.parseInt(strings[i]);
+        }
+        return ints;
+    }
+
+    private static ArrayList<Integer> stringArrayToIntList(String[] strings) {
+        ArrayList<Integer> ints = new ArrayList<>();
+        for (int i = 0; i < strings.length; i++) {
+            ints.add(Integer.parseInt(strings[i]));
+        }
+        return ints;
     }
 
 }
