@@ -4,26 +4,63 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.regex.Pattern;
 
 public class Parser {
 
-    public void parse() throws IOException {
-        String path = "logo.in";
-        File file = new File(path);
+    public static void parse(String fileName) {
+        File file = new File(fileName);
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line;
-            if ((line = br.readLine()) != null) {
-                String pattern = "() ()";
-                Pattern p = Pattern.compile(pattern);
-                String[] linCol = p.split(line);
-                System.out.println(linCol[1]);
+            String firstLine = br.readLine();
+            String[] firstSplitted = firstLine.split(" ");
+            // TODO set variables in World
+
+            int P = Integer.parseInt(br.readLine());
+            // TODO set orders
+            String[] productWeights = br.readLine().split(" ");
+            for (int i = 0; i < productWeights.length; i++) {
+                // TODO set each product weight
             }
-            while ((line = br.readLine()) != null) {
-                // process the line.
-//                count = line.;
+
+            int W = Integer.parseInt(br.readLine());
+            // TODO set W
+            for (int i = 0; i < W; i++) {
+                String[] location = br.readLine().split(" ");
+                int row = Integer.parseInt(location[0]);
+                int column = Integer.parseInt(location[1]);
+                // TODO set r c
+                String[] availableItemsArray = br.readLine().split(" ");
+                // TODO loop and set
             }
+
+            int C = Integer.parseInt(br.readLine());
+            for (int i = 0; i < C; i++) {
+                String[] location = br.readLine().split(" ");
+                int row = Integer.parseInt(location[0]);
+                int column = Integer.parseInt(location[1]);
+
+                int Li = Integer.parseInt(br.readLine());
+                // TODO set ordered numbers for order i: Li
+                String[] productTypes = br.readLine().split(" ");
+                // TODO loop and set
+            }
+
+
+//            String line;
+//
+//            if ((line = br.readLine()) != null) {
+//                String pattern = "() ()";
+//                Pattern p = Pattern.compile(pattern);
+//                String[] linCol = p.split(line);
+//                System.out.println(linCol[1]);
+//            }
+//            while ((line = br.readLine()) != null) {
+//                // process the line.
+////                count = line.;
+//            }
+        } catch (IOException e) {
+            System.out.println(e.toString());
         }
     }
+
 }
