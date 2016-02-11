@@ -1,15 +1,14 @@
 package com.google.randomTurtles;
 
 
-/**
- * Created by Simon on 11.02.2016.
- */
 public class Main {
     public static void main(String[] args) {
 
-        System.out.print("Hello RandomTurtles");
+        String file1 = "busy_day.in";
+        String file2 = "mother_of_all_warehouses.in";
+        String file3 = "redundancy.in";
 
-        Parser.parse("mother_of_all_warehouses.in");
+        Parser.parse(file1);
 
         World.printWorldParameters();
 
