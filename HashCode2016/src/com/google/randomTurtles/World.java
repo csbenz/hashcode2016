@@ -57,8 +57,16 @@ public class World {
 
 
     public static void printWorldParameters() {
-        System.out.println(rows + "\n" + columns + "\n" + D + "\n" + droneMaxLoad
-                        + "\n\n" + P + "\n" + productWeights + "\n\n" + W + "\n" + warehouses + "\n\n" + C + "\n" + orders);
+        System.out.println(rows+"");
+        System.out.printf(columns+ "");
+        System.out.println(D+"");
+        System.out.println(droneMaxLoad+"\n");
+        System.out.println(P+"");
+        System.out.println(productWeights+"\n");
+        System.out.println(W+"");
+//        System.out.println(warehouses+"\n");
+        System.out.println(C+"");
+//        System.out.println(orders);
     }
 
 }

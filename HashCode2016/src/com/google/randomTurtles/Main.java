@@ -13,7 +13,7 @@ public class Main {
         String file2 = "mother_of_all_warehouses.in";
         String file3 = "redundancy.in";
 
-        Parser.parse(file1);
+        Parser.parse(file2);
 
         World.printWorldParameters();
 
