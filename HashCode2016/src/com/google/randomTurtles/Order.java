@@ -11,6 +11,8 @@ public class Order {
     Point position;
     int[] items;
     int size;
+    
+    LinkedList<Integer> assignments;
 
     public Order(Point position, int size, ArrayList<Integer> itemTypeList){
         this.position = position;
@@ -22,6 +24,8 @@ public class Order {
         for(int i = 0; i<itemTypeList.size(); i++){
             items[itemTypeList.get(i)] += 1;
         }
+        
+        this.assignments = new LinkedList<>();
     }
 
     @Override
@@ -33,6 +37,11 @@ public class Order {
         }
         String tot = "Number of items : "+size;
         return loc+" "+itemStr+" "+tot;
+    }
+    
+    public void assign(Item item) {
+        item.assign(this);
+        this.assignments.add(item);
     }
 
     /**

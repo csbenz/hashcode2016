@@ -21,11 +21,6 @@ public class World {
     public static int D;
 
     /**
-     * Maximum number of turns of the simulation
-     */
-    public static long deadline;
-
-    /**
      * Maximum capacity (load) of the drones
      */
     public static int droneMaxLoad;
@@ -59,5 +54,22 @@ public class World {
      * List of orders objects
      */
     public static ArrayList<Order> orders;
+
+    public static ArrayList<Item> inventory;
+
+
+
+    public static void printWorldParameters() {
+        System.out.println(rows+"");
+        System.out.printf(columns+ "");
+        System.out.println(D+"");
+        System.out.println(droneMaxLoad+"\n");
+        System.out.println(P+"");
+        System.out.println(productWeights+"\n");
+        System.out.println(W+"");
+//        System.out.println(warehouses+"\n");
+        System.out.println(C+"");
+//        System.out.println(orders);
+    }
 
 }
