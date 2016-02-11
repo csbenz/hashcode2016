@@ -55,6 +55,9 @@ public class World {
      */
     public static ArrayList<Order> orders;
 
+    public static ArrayList<Item> inventory;
+
+
 
     public static void printWorldParameters() {
         System.out.println(rows+"");

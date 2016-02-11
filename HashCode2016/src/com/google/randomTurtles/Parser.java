@@ -13,6 +13,9 @@ public class Parser {
         File file = new File(fileName);
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+
+            ArrayList<Item> inventory = new ArrayList<>();
+
             String firstLine = br.readLine();
             String[] worldVariables = firstLine.split(" ");
             World.rows = Integer.parseInt(worldVariables[0]);
@@ -44,6 +47,15 @@ public class Parser {
                 String[] availableItemsArray = br.readLine().split(" ");
                 ArrayList<Integer> availableItemsArrayInt = stringArrayToIntList(availableItemsArray);
 
+                int pos = 0;
+                for (Integer integer : availableItemsArrayInt) {
+                    for (int j = 0; j < integer; j++) {
+                        Item item = new Item(pos);
+                        inventory.add(item);
+                    }
+                    pos++;
+                }
+
                 Warehouse warehouse = new Warehouse(new Point(row, column), availableItemsArrayInt);
                 warehouses.add(warehouse);
             }
@@ -65,6 +77,9 @@ public class Parser {
                 orders.add(order);
             }
             World.orders = orders;
+
+            World.inventory = inventory;
+            System.out.println("parsed");
 
         } catch (IOException e) {
             System.out.println(e.toString());
