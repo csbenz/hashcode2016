@@ -3,6 +3,7 @@ package com.google.randomTurtles;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.IllegalFormatCodePointException;
+import java.util.LinkedList;
 
 /**
  * Created by Simon on 11.02.2016.
@@ -42,6 +43,22 @@ public class Order {
     public void assign(Item item) {
         item.assign(this);
         this.assignments.add(item);
+    }
+    
+    public void computeDrone() {
+        double minDist = Double.MAX_VALUE;
+        Drone nearestDrone = null;
+        for (Drone d : World.drones) {
+            double dist = Math.sqrt(Math.pow(this.position.getX() - d.position.getX(), 2) + Math.pow(this.position.getY() - d.position.getY(), 2));
+            if (dist < minDist) {
+                nearestDrone = d;
+                minDist = dist;
+            }
+        }
+        
+        if (nearestDrone != null && nearestDrone.isNotFull()) {
+            nearestDrone.assign(this);
+        }
     }
 
     /**
